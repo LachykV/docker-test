@@ -1,0 +1,10 @@
+{% extends 'base.html' %} 
+{% block title %}Library{% endblock %}
+{% block content %}
+<div class="content">
+  <p class="myroom_page_title page_titles_animate">MYROOM</p>
+  {% for module_file in module_files %}
+    {% include "modules/"|add:module_file %}
+  {% endfor %}
+</div>
+{% endblock %}

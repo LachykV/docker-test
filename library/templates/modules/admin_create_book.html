@@ -1,0 +1,41 @@
+{% extends 'base_module.html' %} {% block container-title %}
+<p>Create Book</p>
+{% endblock %} {% block container-form %}
+<form class="module_form"action="{% url 'myroom' %}" method="post">
+  {% csrf_token %}
+  <input type="hidden" name="unique_number" value="1">
+  
+  <div class="module_form-item">
+    <label class="label" for="book_name">NAME:</label>
+    <input
+      class="input"
+      id="book_name"
+      name="book_name"
+      required
+    />
+  </div>
+  <div class="module_form-item">
+    <label class="label" for="book_description">DESCRIPTION:</label>
+    <input
+      class="input"
+      id="book_description"
+      name="book_description"
+      required
+    />
+  </div>
+  <div class="module_form-item">
+    <label class="label" for="book_count">COUNT:</label>
+    <input
+      class="input"
+      id="book_count"
+      name="book_count"
+      required
+    />
+  </div>
+  <button class="module_form-button" type="submit">ADD</button>
+</form>
+{% endblock %} {% block container-description %}
+<p>You are the admin, so you can add the book to our library</p>
+{% endblock %} {% block container-response %}
+{{ msg_admin_create_book }}
+{% endblock %}

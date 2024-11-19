@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}Library{% endblock %}
+{% block content %}
+<div class="content">
+  <div class="books_page_title page_titles_animate">Find your book!</div>
+    <div class="cards">
+        {% for book_form in form %}
+        <form method="post" action="{% url 'create_order' book_form.instance.id %}">
+            {% csrf_token %}
+            <div class="book_card object_animate">
+              <div class="book_content">
+                <div class="content-img"></div>
+                <div class="content-description">
+                  <div class="description-title">{{ book_form.instance.name }}</div>
+                    <div class="description-authors">Authors: {{ book_form.instance.authors.all|join:", " }}</div>
+                    <div class="description-count">Count: {{ book_form.instance.count }}</div>
+                </div>
+                <div class="book_buttons">
+                  <button class="button-more" onclick="window.location.href='/book/{{ book_form.instance.id }}';" type="button">More..</button>
+                  {% if user.is_authenticated %}
+                  <button class="button-take" type="submit">Take</button>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+        </form>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

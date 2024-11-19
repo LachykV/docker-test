@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}Books by {{ author.name }} {{ author.surname }}{% endblock %}
+
+{% block content %}
+  <div class="content">
+    <div class="books_page_title page_titles_animate">{{ author.name }} {{ author.surname }}'s Books</div>
+    <form method="get">
+      {% csrf_token %}
+      <div class="cards">
+        {% for form in book_forms %}
+          <div class="book_card object_animate">
+            <div class="book_content">
+              <div class="content-description">
+                <div class="description-title">
+                  <a href="{% url 'book' form.instance.id %}">{{ form.instance.name }}</a>
+                </div>
+                <div class="description-id">ID: {{ form.instance.id }}</div>
+                <div class="description-count">Count: {{ form.instance.count }}</div>
+              </div>
+            </div>
+          </div>
+        {% empty %}
+          <div class="no_books_available object_animate">
+            There are no available books!
+          </div>
+        {% endfor %}
+      </div>
+    </form>
+  </div>
+{% endblock %}

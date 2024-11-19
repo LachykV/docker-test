@@ -1,0 +1,76 @@
+<nav class="navbar navbar-expand-lg navbar-light">
+  <a class="navbar-text" href="/">Sprint 18 task</a>
+  {% if user.is_authenticated%}
+  {% if user.role == 0 %}
+  <a class="admin_lable">GUEST</a>
+  {% endif %}
+  {% if user.role == 1 %}
+  <a class="admin_lable">READER</a>
+  {% endif %}
+  {% if user.role == 2 %}
+  <a class="admin_lable">ADMIN</a>
+  {% endif %}
+  {% endif %}
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/books/">Books</a>
+      </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/author/">Authors</a>
+      </li>
+      <li class="nav-item">
+        {% if user.is_authenticated and user.role == 2 %}
+          <a class="nav-link" href="/order/">All Orders</a>
+        {% else %}
+          <a class="nav-link" href="/order/">My Orders</a>
+        {% endif %}
+      </li>
+    <form class="form_header">
+      <input
+        class="header_input"
+        type="search"
+        placeholder="Search"
+        aria-label="Search"
+      />
+      <button class="header_button" type="submit">
+        Search
+      </button>
+    </form>
+    <ul class="navbar-nav mr-auto">
+      {% if user.is_authenticated %}
+      <li class="nav-item">
+        <a class="nav-link" href="/myroom/">MyRoom</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'logout' %}">LogOut</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/login/">Welcome: {{ user.email }}</a>
+      </li>
+      {% else %}
+      <li class="nav-item">
+        <a class="nav-link" href="/register/">SignIn</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/login/">LogIn</a>
+      </li>
+      {% endif %}
+    </ul>
+  </div>
+</nav>

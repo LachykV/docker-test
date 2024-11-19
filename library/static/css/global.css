@@ -1,0 +1,121 @@
+@import "global.header.css";
+@import "global.footer.css";
+@import "global.content.css";
+@import "global.card.css";
+@import "global.form.css";
+@import "book.css";
+@import "books.css";
+@import "index.css";
+@import "registry.css";
+@import "login.css";
+@import "logout.css";
+@import "myroom.css";
+@import "modules.css";
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  scroll-behavior: smooth;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+.body_item {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.body {
+  background-color: rgb(219, 196, 130);
+}
+.main {
+  min-height: 87vh;
+}
+
+.greets_animate {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 1.5s ease-out forwards;
+}
+
+.greets_animate_msg {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInMsg 2s ease-out forwards;
+}
+
+.page_titles_animate {
+  opacity: 0;
+  animation: fadeInTitle 2s ease-out forwards;
+}
+
+.object_animate {
+  opacity: 0;
+  transform: scale(0.98);
+  animation: scaleFadeIn 0.5s ease-out forwards;
+}
+
+@keyframes scaleFadeIn {
+  0% {
+      opacity: 0;
+      transform: scale(0.98);
+  }
+  100% {
+      opacity: 1;
+      transform: scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInMsg {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInTitle {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+body {
+  background: linear-gradient(270deg, bisque, rgb(247, 241, 192), rgb(174, 174, 41), rgb(213, 245, 251));
+  background-size: 800% 800%;  /* Makes the gradient appear to shift */
+  animation: gradientAnimation 10s ease infinite;  /* Set duration and infinite loop */
+}
+
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}

@@ -1,0 +1,74 @@
+.form {
+  min-width: 450px;
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  padding: 15px 40px 15px 40px;
+  border: 2px solid rgb(28, 32, 36);
+  background-color: rgb(167, 163, 146);
+  box-shadow: 1px 6px 10px rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  gap: 10px;
+}
+
+.form_header{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.header_input{
+  text-align: center;
+  color: rgb(49, 48, 46);
+  background-color: rgb(254, 239, 212);
+  border: 2px solid rgb(28, 32, 36);
+  border-radius: 10px;
+}
+.header_button{
+  padding: 0 7px 0 7px;
+  background-color: rgb(136, 141, 147);
+  border: 2px solid rgb(28, 32, 36);
+  border-radius: 10px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.label {
+  width: 100%;
+  padding: 5px;
+  height: auto;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  margin-top: 3px;
+  font-style: normal;
+  text-align: center;
+  text-decoration: none;
+  padding: 2px;
+  color: rgb(254, 239, 212);
+  background-color: rgb(136, 141, 147);
+  border: 2px solid rgb(28, 32, 36);
+  border-radius: 10px;
+}
+
+.input {
+  width: 100%;
+  text-align: center;
+  color: rgb(49, 48, 46);
+  background-color: rgb(254, 239, 212);
+  border: 2px solid rgb(28, 32, 36);
+  border-radius: 10px;
+}
+
+.button {
+  margin-top: 30px;
+  width: 100%;
+  padding: 5px;
+  background-color: rgb(136, 141, 147);
+  border: 2px solid rgb(28, 32, 36);
+  border-radius: 10px;
+  align-self: flex-end;
+}

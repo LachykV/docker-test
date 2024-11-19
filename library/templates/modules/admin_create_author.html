@@ -1,0 +1,41 @@
+{% extends 'base_module.html' %} {% block container-title %}
+<p>Create Author</p>
+{% endblock %} {% block container-form %}
+<form class="module_form"action="{% url 'myroom' %}" method="post">
+  {% csrf_token %}
+  <input type="hidden" name="unique_number" value="2">
+
+  <div class="module_form-item">
+    <label class="label" for="author_name">NAME:</label>
+    <input
+      class="input"
+      id="author_name"
+      name="author_name"
+      required
+    />
+  </div>
+  <div class="module_form-item">
+    <label class="label" for="author_surname">SURNAME:</label>
+    <input
+      class="input"
+      id="author_surname"
+      name="author_surname"
+      required
+    />
+  </div>
+  <div class="module_form-item">
+    <label class="label" for="author_patronimic">PATRONIMIC:</label>
+    <input
+      class="input"
+      id="author_patronimic"
+      name="author_patronimic"
+      required
+    />
+  </div>
+  <button class="module_form-button" type="submit">ADD</button>
+</form>
+{% endblock %} {% block container-description %}
+<p>You are the admin, so you can add the author to our library</p>
+{% endblock %} {% block container-response %}
+{{ msg_admin_create_author }}
+{% endblock %}

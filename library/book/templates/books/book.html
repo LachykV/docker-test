@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}Library{% endblock %}
+{% block content %}
+<div class="content">
+    <div class="book_page_title page_titles_animate">Book Overview</div>
+    <div class="book_page object_animate">
+        <div class="book_page-image"></div>
+        <div class="book_page-description">
+            <div class="book_page-title">{{ form.instance.name }}</div>
+            <div class="book_page-text">{{ form.instance.description }}</div>
+            <div class="book_page-count">Count: {{ form.instance.count }}</div>
+            <div class="book_page-authors">Authors: {{ form.instance.authors.all|join:", " }}</div>
+        </div>
+    </div>
+</div>
+{% endblock %}

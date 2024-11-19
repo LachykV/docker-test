@@ -1,0 +1,66 @@
+.book_page {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 15px;
+  gap: 20px;
+  width: 100%;
+}
+
+.book_page_title {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-size: 40px;
+  margin-top: 3px;
+  font-style: normal;
+  text-decoration: none;
+}
+
+.book_page-image {
+  min-width: 300px;
+  min-height: 450px;
+  border: 2px solid rgb(51, 50, 50);
+  border: 2px solid rgb(28, 32, 36);
+  background-color: rgb(167, 163, 146);
+  box-shadow: 1px 6px 10px rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+}
+
+.book_page-description {
+  display: flex;
+  flex-direction: column;
+  min-width: 300px;
+  max-width: 400px;
+  padding: 10px;
+  border: 2px solid rgb(28, 32, 36);
+  background-color: rgb(167, 163, 146);
+  box-shadow: 1px 6px 10px rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+}
+
+.book_page-title {
+  height: auto;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-size: 40px;
+  margin-top: 3px;
+  font-style: normal;
+  text-decoration: none;
+  padding: 5px;
+  color: rgb(254, 239, 212);
+  background-color: rgb(136, 141, 147);
+  border: 2px solid rgb(28, 32, 36);
+  border-radius: 10px;
+}
+
+.book_page-text {
+  width: 100%;
+  height: 100%;
+  padding: 5px;
+  font-size: 25px;
+  word-break: keep-all;
+  color: rgb(49, 48, 46);
+  background-color: rgb(157, 159, 162);;
+  border: 2px solid rgb(28, 32, 36);
+  border-radius: 10px;
+}

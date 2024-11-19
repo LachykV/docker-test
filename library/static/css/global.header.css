@@ -1,0 +1,58 @@
+.form-inline {
+  display: flex;
+  flex-direction: row;
+}
+
+.collapse {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 50px;
+  align-items: center;
+}
+
+.navbar {
+  width: 100%;
+  max-width: 1500px;
+  padding: 0px;
+  background-color: rgba(232, 207, 150, 0.751);
+}
+
+.navbar-nav{
+  gap: 10px;
+}
+
+.navbar-text {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-size: 30px;
+  margin-top: 3px;
+  font-style: normal;
+  text-decoration: none;
+}
+
+.admin_lable {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-size: 25px;
+  margin-top: 3px;
+  font-style: normal;
+  text-decoration: none;
+  color: red;
+}
+
+
+
+.nav-link{
+  position: relative;
+}
+.nav-link:hover {
+  border: 1px;
+}
+
+.nav-link:hover::before {
+  content: "•";
+  color: #58616b;
+  position: absolute;
+  left: -4px;
+}

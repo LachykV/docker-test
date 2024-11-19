@@ -1,0 +1,15 @@
+.footer{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: 1500px;
+    justify-content: space-around;
+    background-color: hsla(42, 64%, 75%, 0.747);
+    padding-top: 12px;
+}
+
+.footer_item{
+    display: flex;
+    justify-content: center;
+    
+}

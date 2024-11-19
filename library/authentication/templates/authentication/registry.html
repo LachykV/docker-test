@@ -1,0 +1,45 @@
+{% extends 'base.html' %} {% block title %}Library{% endblock %} {% block content %}
+<div class="content">
+  <div class="registry_page_title">Become our member!</div>
+  <div class="registry_page-form">
+    <h2>Register</h2>
+    <form class="form" action="/registry" method="post">
+      <div class="form-field">
+        <label class="label" for="username">USERNAME:</label>
+        <input
+          class="input"
+          type="text"
+          id="username"
+          name="username"
+          required
+        />
+      </div>
+      <div class="form-field">
+        <label class="label" for="email">EMAIL:</label>
+        <input class="input" type="email" id="email" name="email" required />
+      </div>
+      <div class="form-field">
+        <label class="label" for="password">PASSWORD:</label>
+        <input
+          class="input"
+          type="password"
+          id="password"
+          name="password"
+          required
+        />
+      </div>
+      <div class="form-field">
+        <label class="label" for="confirm_password">CONFRIM PASSWORD:</label>
+        <input
+          class="input"
+          type="password"
+          id="confirm_password"
+          name="confirm_password"
+          required
+        />
+      </div>
+      <button class="button" type="submit">REGISTER</button>
+    </form>
+  </div>
+</div>
+{% endblock %}

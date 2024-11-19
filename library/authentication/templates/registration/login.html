@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %}Library{% endblock %}
+
+{% block content %}
+<div class="content">
+  <div class="login_page_title">To The My Library!</div>
+  <div class="login_page-form">
+    <h2>Login</h2>
+    <form class="form" action="{% url 'login' %}" method="post">
+      {% csrf_token %}
+
+      <div class="form-field">
+        <label class="label" >USERNAME:</label>
+        {{ form.username }}
+        {% if form.username.errors %}
+          <div class="error-message">{{ form.username.errors }}</div>
+        {% endif %}
+      </div>
+
+      <div class="form-field">
+        <label class="label" >PASSWORD:</label>
+        {{ form.password }}
+        {% if form.password.errors %}
+          <div class="error-message">{{ form.password.errors }}</div>
+        {% endif %}
+      </div>
+
+      <button class="button" type="submit">LOGIN</button>
+    </form>
+  </div>
+</div>
+{% endblock %}
+

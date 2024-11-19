@@ -1,0 +1,24 @@
+{% extends 'base_module.html' %} {% block container-title %}
+<p>Find BOOK/AUTHOR/USER/ORDER</p>
+{% endblock %} {% block container-form %}
+<form class="module_form" action="{% url 'myroom' %}" method="post">
+  {% csrf_token %}
+  <input type="hidden" name="unique_number" value="3">
+
+  <fieldset class="module_form-check">
+    <label> <input type="radio" name="option" value="book" /> Book </label>
+    <label>
+      <input type="radio" name="option" value="author" /> Author
+    </label>
+    <label> <input type="radio" name="option" value="user" /> User </label>
+    <label> <input type="radio" name="option" value="order" /> Order </label>
+  </fieldset>
+  <div class="module_form-item">
+    <label class="label" for="search">SEARCH:</label>
+    <input class="input" id="search" name="search" required />
+  </div>
+  <button class="module_form-button" type="submit">SEARCH</button>
+</form>
+{% endblock %} {% block container-description %}
+<p>What you need to find?</p>
+{% endblock %} {% block container-response %} {{ msg_admin_find_book }} {%endblock %}

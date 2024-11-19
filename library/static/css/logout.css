@@ -1,0 +1,25 @@
+.logout_content-greet {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-size: 100px;
+  margin-top: 3px;
+  font-style: normal;
+  text-decoration: none;
+}
+
+.logout_content-about {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  margin-top: 3px;
+  font-style: normal;
+  text-decoration: none;
+}
+.logout_content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  padding-top: 15vh;
+}

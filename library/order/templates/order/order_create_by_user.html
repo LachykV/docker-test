@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  {% if user.is_authenticated %}
+    <h1>Create Order</h1>
+
+    <div style="margin-top: 150px; margin-left: -200px;">
+      <form class='form' method="post">
+        {% csrf_token %}
+
+        <div class="mb-3">
+          <label for="{{ form.book.id_for_label }}" class="label">{{ form.book.label }}</label>
+          <div style="width: 400px; max-width: 500px;">
+            {{ form.book }}
+          </div>
+        </div>
+
+        <button type="submit" class="button" style="width: 100%; max-width: 500px; margin-top: 0px;">Create Order</button>
+
+        {% if error %}
+          <div class="alert alert-danger mt-2">{{ error }}</div>
+        {% endif %}
+      </form>
+    </div>
+  {% else %}
+    <p>You need to be logged in to create an order.</p>
+  {% endif %}
+{% endblock %}
+
+
+

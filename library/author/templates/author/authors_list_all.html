@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}All Authors{% endblock %}
+
+{% block content %}
+  <div class="content">
+    <div class="books_page_title page_titles_animate">All Authors</div>
+    <form method="get">
+      {% csrf_token %}
+      <div class="cards">
+        {% for form in author_forms %}
+          <div class="author_card object_animate">
+            <div class="author_content">
+              <div class="content-description">
+                <div class="description-title">
+                  <a href="{% url 'author_books' form.instance.id %}">
+                    {{ form.name.value }} {% if form.surname.value %}{{ form.surname.value }}{% endif %}
+                  </a>
+                </div>
+                {% if form.patronymic.value %}
+                  <div class="description-text">Patronymic: {{ form.patronymic.value }}</div>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </form>
+  </div>
+{% endblock %}
