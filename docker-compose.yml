@@ -1,0 +1,25 @@
+services:
+  django_library:
+    build: .
+    volumes:
+      - ./library:/app/doctest/library
+    ports:
+      - "8000:8000"
+    depends_on:
+      - postgres_db
+    environment:
+      - DJANGO_SETTINGS_MODULE=library.settings
+
+  postgres_db:
+    image: postgres:13
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+
+volumes:
+  postgres_data:
+
+
